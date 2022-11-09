@@ -105,7 +105,7 @@ html,body {
 
   .uwucat {
     height: 150px;
-    width: 150px;
+    width: 0px;
     position: relative;
     background: red;
     text-transform: uppercase;
@@ -116,31 +116,26 @@ html,body {
 
   @keyframes office {
     0% {
-        background-color: red;
         left: 400px;
         top: 0px;
     }
 
     25% {
-        background-color: orange;
         left: 1150px;
         top: 100px;
     }
 
     50% {
-        background-color: yellow;
         right: 1150px;
         top: 300px;
     }
 
     75% {
-        background-color: green;
         left: 0px;
         top: 407px;
     }
 
     100% {
-        background-color: blue;
         left: 400px;
         top: 0px;
     }
