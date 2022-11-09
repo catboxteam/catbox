@@ -55,13 +55,17 @@ p.desc{
   color: rgba(255,255,255,0.8);
   font-weight:100;
   font-size:17px;
+  
 }
 .contact li a {
   text-decoration:none;
   color: rgba(255,255,255,0.8);
+  transition: all .2s ease-in-out;
 }
 .contact li a:hover{
   color:rgba(255,255,255,1);
+  transform: scale(1.04);
+  filter: drop-shadow(0px 0px 15px #000);
 }
 .contact li~li {
   margin-left:1vw; 
