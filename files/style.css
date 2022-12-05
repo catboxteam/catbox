@@ -6,120 +6,117 @@ html,body {
     height:100%;
     position:absolute;
     background: linear-gradient(25deg,#219bad,#203065);
-        text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
     animation: scale 1s ease 0s 1 normal forwards;
   
   }
   
-  @keyframes scale {
-      0% {
-          transform: scale(2);
-          background: linear-gradient(25deg,#219bad,#203065);
-      }
-  
-      100% {
-          transform: scale(1);
-      }
-  }
-  
-  .container  {
-    width:100%;
-    height:100%;
-    position:absolute;
-  }
-  #blurCanvasTop{
-    left:0%;
-    top:0%;
-    position:absolute;
-  }
-  #blurCanvasBottom{
-    left:50%;
-    top:0;
-    position:absolute;
-  }
-  .content {
-    left:15%;
-    top:20%;
-    width:70%;
-    position:relative;
-  }
-  h1.title {
-    color:white;
-    font-size: 4vw;
-    display:inline;
-    font-weight:500;
-  }
-  p.desc{
-    position:relative;
-    width:100%;
-    font-size:4vw;
-    color:rgba(255,255,255,1);
-    font-weight: 200;
-    margin-bottom:40px;
-  }
-  .contacts {
-    position:absolute;
-    right:0%;
-    bottom:0;
-    margin-bottom:1vw;
-    margin-right:1vw;
-  }
-  .contact li {
-    list-style-type:none;
-    float:left;
-    color: rgba(255,255,255,0.8);
-    font-weight:100;
-    font-size:17px;
-    
-  }
-  .contact li a {
-    text-decoration:none;
-    color: rgba(255,255,255,0.8);
-    transition: all .2s ease-in-out;
-  }
-  .contact li a:hover{
-    color:rgba(255,255,255,1);
-    transform: scale(1.04);
-    filter: drop-shadow(0px 0px 15px #000);
-  }
-  .contact li~li {
-    margin-left:1vw; 
-  }
-  .blur {
-    width:100%;
-    height:100%;
-    position:absolute;
-    overflow:hidden;
-  }
-  .blurTop {
-    left:40%;
-    top:-110%;
-    transform:rotate(20deg);
-    transform-origin: 0 100%;
-  }
-  .blurBottom {
-    left:-60%;
-    top:100%;
-    transform:rotate(20deg);
-    transform-origin: 100% 0%;
-  }
-
-  .snow{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background-image: url("https://cdn.discordapp.com/attachments/744182992037216260/990023034524033105/snow1.png"), url("https://cdn.discordapp.com/attachments/744182992037216260/990023034758922250/snow2.png"), url("https://cdn.discordapp.com/attachments/744182992037216260/990023034951827556/snow3.png");
-    
-    animation: snow 20s linear  infinite ;
-  }
-  @keyframes snow {
+@keyframes scale {
     0% {
-      background-position: 0px 0px, 0px 0px, 0px 0px;
+        transform: scale(2);
+        background: linear-gradient(25deg,#219bad,#203065);
     }
     100% {
-      background-position: 500px 1000px, 400px 400px, 300px 300px;
+        transform: scale(1);
     }
-  }
+}
   
+.container  {
+  width:100%;
+  height:100%;
+  position:absolute;
+}
+#blurCanvasTop{
+  left:0%;
+  top:0%;
+  position:absolute;
+}
+#blurCanvasBottom{
+  left:50%;
+  top:0;
+  position:absolute;
+}
+.content {
+  left:15%;
+  top:20%;
+  width:70%;
+  position:relative;
+}
+h1.title {
+  color:white;
+  font-size: 4vw;
+  display:inline;
+  font-weight:500;
+}
+p.desc{
+  position:relative;
+  width:100%;
+  font-size:4vw;
+  color:rgba(255,255,255,1);
+  font-weight: 200;
+  margin-bottom:40px;
+}
+.contacts {
+  position:absolute;
+  right:0%;
+  bottom:0;
+  margin-bottom:1vw;
+  margin-right:1vw;
+}
+.contact li {
+  list-style-type:none;
+  float:left;
+  color: rgba(255,255,255,0.8);
+  font-weight:100;
+  font-size:17px;
+  
+}
+.contact li a {
+  text-decoration:none;
+  color: rgba(255,255,255,0.8);
+  transition: all .2s ease-in-out;
+}
+.contact li a:hover{
+  color:rgba(255,255,255,1);
+  transform: scale(1.04);
+  filter: drop-shadow(0px 0px 15px #000);
+}
+.contact li~li {
+  margin-left:1vw; 
+}
+.blur {
+  width:100%;
+  height:100%;
+  position:absolute;
+  overflow:hidden;
+}
+.blurTop {
+  left:40%;
+  top:-110%;
+  transform:rotate(20deg);
+  transform-origin: 0 100%;
+}
+.blurBottom {
+  left:-60%;
+  top:100%;
+  transform:rotate(20deg);
+  transform-origin: 100% 0%;
+}
 
+.snow{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-image: url("https://cdn.discordapp.com/attachments/744182992037216260/990023034524033105/snow1.png"), url("https://cdn.discordapp.com/attachments/744182992037216260/990023034758922250/snow2.png"), url("https://cdn.discordapp.com/attachments/744182992037216260/990023034951827556/snow3.png");
+  
+  animation: snow 20s linear  infinite ;
+}
+@keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px 300px;
+  }
+}
