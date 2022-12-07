@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #1b1b1b;
+    color: #1c1c1d;
+    font-family: system-ui;
+    line-height: 1.5;
+    padding: 2rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    padding: 2.5rem;
+    color: #fff;
+    background: hsla(0, 0%, 8%, 0.7);
+    box-shadow: 0 8px 32px 0 rgb(11, 9, 19);
+    backdrop-filter: blur(8px) saturate(100%);
+    -webkit-backdrop-filter: blur(8px) saturate(100%);
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top-left-radius: 2.5rem;
+    border-bottom-right-radius: 2.5rem;
+  }
+
+  video{
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    border-radius: 1.25rem;
+  }
