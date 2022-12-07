@@ -1,1 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: linear-gradient(25deg,#282828,#161616);
+    height: 100vh;
+    overflow: hidden;
+    font-family: Raleway;
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header{
+    text-align: center;
+    color:white;
+}
+.time-reader{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    justify-content: center;
+}
+.count{
+  list-style: none;
+  font-size: 40px;
+  background-color: #252731;
+  padding: 15px;
+  border-radius: 10px;
+  gap: 20px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #e1e3eb;
+  box-shadow: 0px 1px 3px rgba(9, 10, 15, 0.25),
+    0px 4px 16px rgba(9, 10, 15, 0.1), 0px 8px 24px rgba(9, 10, 15, 0.1),
+    inset 0px 1px 1px #323543;
+    
+}
+span{
+    padding: 10px;
+    margin: 3px;
+    font-size: 10px;
+    color: white;
+
+}
 
