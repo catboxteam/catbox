@@ -1,1 +1,158 @@
- <h1 id="headline">Countdown to 2023</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>catbox.pw | Countdown</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="keywords" content="LBP servers | LBP | catbox.pw" />
+    <meta name="description" content="catbox | Countdown to 2023" />
+    <link rel="stylesheet" type="text/css" href="./files/style/countdown.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./files/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./files/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./files/favicon-16x16.png">
+    <link rel="manifest" href="./files/site.webmanifest">
+    <link rel="mask-icon" href="./files/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- <link rel="stylesheet" type="text/css" href="script.js" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,400,300,200,100" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  <h1 class="header">Countdown to 2023</h1>
+  <ul class="time-reader">
+    <li id="days" class="count">0</li><span>days</span>
+    <li id="hours" class="count">0</li><span>hours</span>
+    <li id="minutes" class="count">0</li><span>minutes</span>
+    <li id="seconds" class="count">0</li><span>seconds</span>
+</ul> 
+  <script>
+    /*to calculate dateDifferenceInMilliSeconds, we say
+ let dateDifference = newyearsdate - todaydate
+
+ days = dateDifference/(1000*60 * 60 * 24)
+ hours = dateDifference /(1000 * 60 * 60 )%24
+ minutes = dateDifference /(1000 * 60 )% 60
+ seconds =dateDifference) / (1000) %60
+
+ round-up the answer to a whole number using Math.floor() method
+ */
+
+function timeReading() {
+
+let year = '1 jan 2023'
+
+let newYearDate = new Date(year)
+let todayDate = new Date()
+
+let dateDifference = newYearDate - todayDate
+
+let days = Math.floor(dateDifference / (1000 * 60 * 60 * 24))
+let hours = Math.floor(dateDifference / (1000 * 60 * 60) % 24)
+let minutes = Math.floor(dateDifference / (1000 * 60) % 60)
+let seconds = Math.floor((dateDifference) / (1000) % 60)
+
+ //console.log(days, hours, minutes, seconds)
+//store the DOMs in a variable
+let day = document.getElementById('days')
+let  hr = document.getElementById('hours')
+let min = document.getElementById('minutes')
+let sec = document.getElementById('seconds')
+
+day.innerHTML = days
+hr.innerHTML = hours
+min.innerHTML = minutes
+sec.innerHTML = seconds
+
+ if(days === 0){
+alert('HAPPY NEW YEAR 🥶')
+}
+
+
+}
+timeReading()
+setInterval(timeReading, 1000)
+  </script>
+  <script>
+    import { SVG } from "https://cdn.skypack.dev/@svgdotjs/svg.js";
+import {
+  createVoronoiTessellation,
+  random,
+  randomBias,
+  randomSnap,
+  createNoiseGrid,
+  map
+} from "https://cdn.skypack.dev/@georgedoescode/generative-utils";
+
+const width = 196;
+const height = 196;
+
+const svg = SVG()
+  .viewbox(0, 0, width, height)
+  .attr("preserveAspectRatio", "xMidYMid slice");
+
+svg.addTo("body");
+
+function regenerate() {
+  svg.clear();
+
+  const grid = createNoiseGrid({
+    width,
+    height,
+    resolution: 48,
+    xInc: 0.0125,
+    yInc: 0.0125,
+    seed: Math.random() * 1000
+  });
+
+  const points = [...Array(96)].map(() => {
+    return {
+      x: random(0, width),
+      y: random(0, height)
+    };
+  });
+
+  const tessellation = createVoronoiTessellation({
+    width,
+    height,
+    points,
+    relaxIterations: 24
+  });
+
+  const debug = false;
+
+  tessellation.cells.forEach((cell) => {
+    const noiseValue = grid.lookup({
+      x: cell.centroid.x,
+      y: cell.centroid.y
+    }).noiseValue;
+
+    svg
+      .line(
+        cell.centroid.x - cell.innerCircleRadius / 2,
+        cell.centroid.y - cell.innerCircleRadius / 2,
+        cell.centroid.x + cell.innerCircleRadius / 2,
+        cell.centroid.y + cell.innerCircleRadius / 2
+      )
+      .stroke({
+        width: cell.innerCircleRadius / 2,
+        color: random(["#F9F9FC", "#FFD53D", "#7257FA"])
+      })
+      .rotate(map(noiseValue, -1, 1, 0, 360))
+      .scale(0.5);
+  });
+
+  const heading = document.querySelector("h1");
+  if (Math.random() > 0.5) {
+    heading.classList.remove("rotate-left");
+    heading.classList.add("rotate-right");
+  } else {
+    heading.classList.remove("rotate-right");
+    heading.classList.add("rotate-left");
+  }
+}
+
+regenerate();
+
+document.querySelector("button").addEventListener("click", regenerate);
+  </script>
