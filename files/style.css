@@ -14,7 +14,7 @@ html,body {
 @keyframes scale {
     0% {
         transform: scale(2);
-        background: linear-gradient(25deg,#291958,#681437);
+        background: linear-gradient(25deg,#000000,#371a5ec4);
     }
     100% {
         transform: scale(1);
